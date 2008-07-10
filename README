@@ -1,0 +1,19 @@
+Wiretapper
+=============
+
+Just some code I'm playing around with for testing screen scrapers.
+Inspired by http://github.com/somebox/eavesdrop/tree/master
+
+
+Example
+=======
+
+@datastore = SQLiteDatastore.new('db_name')
+@wiretapper = NetHTTPWiretapper.new(:data_store => @datastore)
+
+@wiretapper.snoop do
+  WWW::Mechanize.new.get('http://www.google.com')
+end
+
+
+Copyright (c) 2008 [Joshua Bates], released under the MIT license
